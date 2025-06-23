@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GameScope | Início</title>
+  <link rel="stylesheet" href="./src/css/estilos.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+      background-color: #000;
+    }
+
+    .inicio {
+      padding: 0 1rem;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 1rem;
+      position: relative;
+    }
+
+    .logo {
+      flex: 1;
+      text-align: left;
+    }
+
+    .logo h1 {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-weight: bold;
+      color: white;
+    }
+
+    .logo h1 a span {
+      color: purple;
+    }
+
+    .logo h1 a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .menu-header {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .item-menu {
+      font-size: clamp(1.2rem, 3vw, 2rem);
+      font-weight: bold;
+      color: #000;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .item-menu:hover {
+      color: #6a0dad;
+    }
+
+    .hamburguer {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    .barra {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+    }
+
+    .card {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      margin: 2rem 0;
+      padding: 1rem;
+      color: white;
+    }
+
+    .card-texto {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .card-texto h2 {
+      font-size: clamp(1.2rem, 4vw, 2rem);
+      margin-bottom: 1rem;
+    }
+
+    .card-texto p,
+    .card-texto li {
+      font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+      line-height: 1.5;
+    }
+
+    .card-img {
+      flex: 1;
+      min-width: 280px;
+      text-align: center;
+    }
+
+    .card-img img {
+      max-width: 100%;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card-img img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .menu-header {
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: white;
+        padding: 1rem;
+        display: none;
+        align-items: center;
+        z-index: 10;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .menu-header.ativo {
+        display: flex;
+      }
+
+      .hamburguer {
+        display: flex;
+      }
+    }
+
+    .botoes-rodape {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 2rem 0 3rem 0;
+    }
+
+    .botoes-rodape a {
+      background-color: purple;
+      color: white;
+      padding: 0.75rem 2rem;
+      font-weight: bold;
+      font-size: 1.1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .botoes-rodape a:hover {
+      background-color: #4b0082;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="inicio">
+    <header>
+      <div class="logo">
+        <h1><a href="index.html"><span>Game</span>Scope</a></h1>
+      </div>
+
+      <div class="hamburguer" onclick="toggleMenu()">
+        <div class="barra"></div>
+        <div class="barra"></div>
+        <div class="barra"></div>
+      </div>
+
+      <ul class="menu-header" id="menuHeader">
+        <li><a href="./src/pages/jogos.html" class="item-menu">JOGOS</a></li>
+        <li><a href="./src/pages/online.html" class="item-menu">ONLINE</a></li>
+      </ul>
+    </header>
+
+    <div class="card">
+      <div class="card-texto">
+        <h2>A ENERGIA QUE <span>MOVE SEU JOGO</span></h2>
+        <p>
+          O GameScope é o portal para o futuro dos jogos piratas, sempre um passo à frente da concorrência.
+        </p>
+      </div>
+      <div class="card-img">
+        <img src="./src/assets/ps5.jpg" alt="Imagem de jogo" />
+      </div>
+    </div>
+
+    <div class="card card-secundario">
+      <div class="card-texto">
+        <h2>COMO ADQUIRIR NOSSOS JOGOS</h2>
+        <p>Para baixar e instalar nossos jogos, siga os passos abaixo:</p>
+        <ul>
+          <li>Baixe e instale o programa <strong>SteamTools</strong> (clique na imagem ao lado).</li>
+          <li>Abra o SteamTools.</li>
+          <li>Baixe o <strong>.rar</strong> do jogo desejado na aba "Jogos".</li>
+          <li>Extraia os arquivos com WinRAR.</li>
+          <li>Arraste todos os arquivos para a <strong>janela flutuante</strong> do SteamTools.</li>
+          <li>Reinicie a Steam e o jogo estará na sua biblioteca.</li>
+        </ul>
+        <p>Praticidade, acesso rápido e revolução na pirataria digital.</p>
+      </div>
+      <div class="card-img">
+        <a href="https://www.mediafire.com/file/bn6aqq6c3gdggno/st-setup-1.8.16.exe/file" target="_blank">
+          <img src="./src/assets/steamtools.png" alt="Demonstração do SteamTools" />
+        </a>
+      </div>
+    </div>
+
+    <div class="botoes-rodape">
+      <a href="./src/pages/jogos.html">JOGOS</a>
+      <a href="./src/pages/online.html">ONLINE</a>
+    </div>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menuHeader").classList.toggle("ativo");
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GameScope | Jogos</title>
+  <link rel="stylesheet" href="../css/jogos.css" />
+  <style>
+    a.link-roxo {
+      color: purple;
+      font-size: inherit;
+      text-decoration: underline;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 1rem 0;
+      position: relative; /* importante para posicionar o menu absoluto dentro do header */
+    }
+
+    header h1 a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .menu-header {
+      display: flex;
+      justify-content: center; /* centraliza os links */
+      gap: 3rem; /* espaçamento entre os links */
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      width: 100%;
+    }
+
+    .item-menu {
+      font-size: 2rem; /* aumenta o tamanho da fonte */
+      white-space: nowrap;
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .hamburguer {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 3px;
+    }
+
+    .barra {
+      width: 25px;
+      height: 3px;
+      background-color: currentColor;
+      transition: 0.3s;
+    }
+
+    /* Responsividade */
+    @media (max-width: 480px) {
+      .hamburguer {
+        display: flex;
+      }
+
+      .menu-header {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: white; /* fundo branco para cobrir imagens */
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 9999; /* z-index alto para aparecer na frente */
+        width: 100%;
+        justify-content: flex-start; /* para o menu móvel */
+      }
+
+      .menu-header.ativo {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="inicio">
+    <header>
+      <h1><a href="../../index.html"><span>Game</span>Scope</a></h1>
+      <div class="hamburguer" aria-label="Menu hamburguer" role="button" tabindex="0">
+        <span class="barra"></span>
+        <span class="barra"></span>
+        <span class="barra"></span>
+      </div>
+      <nav>
+        <ul class="menu-header">
+          <li><a href="./jogos.html" class="item-menu">JOGOS</a></li>
+          <li><a href="./online.html" class="item-menu">ONLINE</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <center>
+      <p>
+        Caso seu jogo não apareça aí, baixe o nosso programinha clicando nesse link:
+        <a href="https://www.mediafire.com/file/s7wsp0o8l3sr3ng/GameScope.rar/file" class="link-roxo" target="_blank" rel="noopener noreferrer">
+          https://www.mediafire.com/file/s7wsp0o8l3sr3ng/GameScope.rar/file
+        </a> ele está em português e é autoexplicativo, após baixar o arquivo winrar do site, você vai extrair o arquivo winrar, depois você vai abrir o SteamTools e jogar os arquivos dentro dele (Ele tem que estar aparecendo na tela para você jogar os arquivos)
+      </p>
+    </center>
+
+    <main class="cards-container">
+      <a href="https://www.mediafire.com/file/bf55vh93gjh9bpu/3159330.zip/file" class="card-jogo">
+        <img src="../assets/img2.png" alt="Capa do Assassin's Creed" />
+        <h3>Assassin's Creed</h3>
+      </a>
+      <a href="https://www.mediafire.com/file/s365cft3py67qwp/3017860.zip/file" class="card-jogo">
+        <img src="../assets/img3.png" alt="Capa do DOOM" />
+        <h3>DOOM</h3>
+      </a>
+      <a href="https://www.mediafire.com/file/gk9ia25083rssua/2531310.zip/file" class="card-jogo">
+        <img src="../assets/img1.png" alt="Capa do The Last of Us Part II" />
+        <h3>TLOU 2</h3>
+      </a>
+      <a href="https://www.mediafire.com/file/d7l2jr00h8sdd8k/1593500.zip/file" class="card-jogo">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/8/82/God_of_War_2018_capa.png" alt="Capa do God of War" />
+        <h3>God of War</h3>
+      </a>
+      <a href="https://www.mediafire.com/file/ht0taenndgdk44d/271590.zip/file" class="card-jogo">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/8/80/Grand_Theft_Auto_V_capa.png" alt="Capa do GTA V" />
+        <h3>GTA V</h3>
+      </a>
+      <a href="https://www.mediafire.com/file/qu9176gdtm888z1/1174180.rar/file" class="card-jogo">
+        <img src="https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA08519_00/12/i_3da1cf7c41dc7652f9b639e1680d96436773658668c7dc3930c441291095713b/i/icon0.png" alt="Capa do Red Dead Redemption 2" />
+        <h3>Red Dead 2</h3>
+      </a>
+      <a href="https://www.mediafire.com/file/ereyrtq7lq5qgdh/1245620.zip/file" class="card-jogo">
+        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202110/2000/YMUoJUYNX0xWk6eTKuZLr5Iw.jpg" alt="Capa do Elden Ring" />
+        <h3>Elden Ring</h3>
+      </a>
+      <a href="https://www.mediafire.com/file/4x48ga4br4wytn3/3059520.rar/file" class="card-jogo">
+        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202505/1521/44c15449fbe9485987e27e2fa2c86008a7b4a89d9ab7e0a8.png" alt="Capa do F1 25" />
+        <h3>F1 25</h3>
+      </a>
+      <a href="https://www.mediafire.com/file/xedo76trwfqrkg4/1091500.zip/file" class="card-jogo">
+        <img src="https://assets.xboxservices.com/assets/f4/75/f475ff8f-4217-4040-99fb-bf86ed0fccb4.jpg?n=Cyberpunk-2077_GLP-Page-Hero-0_1083x1222.jpg" alt="Capa do Cyberpunk 2077" />
+        <h3>Cyberpunk 2077</h3>
+      </a>
+    </main>
+  </section>
+
+  <script>
+    // Ativa menu hamburguer
+    document.addEventListener('DOMContentLoaded', function () {
+      const hamburguer = document.querySelector('.hamburguer');
+      const menu = document.querySelector('.menu-header');
+
+      hamburguer.addEventListener('click', () => {
+        menu.classList.toggle('ativo');
+      });
+    });
+  </script>
+</body>
+</html>

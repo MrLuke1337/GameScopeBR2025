@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GameScope | Online</title>
+  <link rel="stylesheet" href="../css/jogos.css" />
+  <style>
+    a.link-roxo {
+      color: purple;
+      font-size: inherit;
+      text-decoration: underline;
+    }
+
+    header h1 a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .inicio {
+      padding: 0 1rem;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 1rem 0;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      margin: 0;
+    }
+
+    .menu-header {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 1rem;
+    }
+
+    /* Aqui só aumentei o tamanho da fonte das palavras JOGOS e ONLINE */
+    .item-menu {
+      font-size: 1.8rem;
+      white-space: nowrap;
+    }
+
+    main.online-content {
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      font-family: Arial, sans-serif;
+    }
+
+    main.online-content h2 {
+      color: #4b0082;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: clamp(1.3rem, 4vw, 1.8rem);
+    }
+
+    main.online-content p {
+      font-size: clamp(1rem, 2.8vw, 1.1rem);
+      line-height: 1.6;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .online-img-link img {
+      width: 220px;
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .online-img-link img:hover {
+      transform: scale(1.05);
+    }
+
+    .hamburguer {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 3px;
+    }
+
+    .barra {
+      width: 25px;
+      height: 3px;
+      background-color: currentColor;
+      transition: 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      .inicio {
+        padding: 0 0.5rem;
+      }
+
+      main.online-content {
+        margin: 1.5rem auto;
+        padding: 1.5rem;
+        max-width: 90%;
+      }
+
+      .menu-header {
+        gap: 0.5rem;
+      }
+
+      .item-menu {
+        padding: 0.3rem 0.6rem;
+        font-size: 1.8rem; /* mantém o tamanho maior no mobile também */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hamburguer {
+        display: flex;
+      }
+
+      .menu-header {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: inherit;
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+
+      .menu-header.ativo {
+        display: flex;
+      }
+
+      main.online-content p {
+        text-align: left;
+      }
+
+      .online-img-link img {
+        width: 160px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="inicio">
+    <header>
+      <h1><a href="../../index.html"><span>Game</span>Scope</a></h1>
+      <div class="hamburguer">
+        <span class="barra"></span>
+        <span class="barra"></span>
+        <span class="barra"></span>
+      </div>
+      <nav>
+        <ul class="menu-header">
+          <li><a href="./jogos.html" class="item-menu">Jogos</a></li>
+          <li><a href="./online.html" class="item-menu">Online</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="online-content">
+      <h2>Jogue Online com a Comunidade GameScope!</h2>
+      <p>
+        Quer jogar online com outros jogadores? Não seja por isso!
+      </p>
+      <p>
+        Basta clicar na imagem abaixo para entrar no site online-fix.me, crie uma conta e, após isso, procure o jogo que deseja.  
+        Caso seu jogo não apareça, infelizmente ele não tem suporte para online.  
+        Se aparecer, clique em “Baixar correção do servidor”, depois vá em “Fix Repair/”  
+        e selecione “NomeDoJogo_Fix_Repair_Steam_V2_Generic.rar”.
+      </p>
+      <center class="online-img-link">
+        <a href="https://online-fix.me/" target="_blank" rel="noopener noreferrer">
+          <img src="images-removebg-preview.png" alt="Acessar online-fix.me">
+        </a>
+      </center>
+    </main>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const hamburguer = document.querySelector('.hamburguer');
+      const menu = document.querySelector('.menu-header');
+
+      if (hamburguer && menu) {
+        hamburguer.addEventListener('click', function () {
+          menu.classList.toggle('ativo');
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>
