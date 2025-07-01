@@ -1,128 +1,102 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GameScope | Jogos</title>
   <link rel="stylesheet" href="../css/jogos.css" />
   <style>
-    a.link-roxo {
-      color: purple;
-      font-size: inherit;
-      text-decoration: underline;
-    }
-
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      padding: 1rem 0;
+      padding: 1rem;
       position: relative;
     }
-
     header h1 a {
-      color: inherit;
+      color: black;
       text-decoration: none;
     }
-
-    .menu-header {
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      width: 100%;
-    }
-
-  .item-menu {
-  color: #000;
-  transition: color 0.3s ease;
-}
-.item-menu:hover {
-  color: #6a0dad;
-}
-
-
     .hamburguer {
       display: none;
       flex-direction: column;
       cursor: pointer;
-      gap: 3px;
+      gap: 5px;
     }
-
     .barra {
       width: 25px;
       height: 3px;
-      background-color: currentColor;
+      background: black;
       transition: 0.3s;
     }
-
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: purple;
+    }
     @media (max-width: 480px) {
       .hamburguer {
         display: flex;
       }
-
-      .menu-header {
+      nav ul {
         display: none;
         position: absolute;
-        top: 100%;
+        top: 60px;
         left: 0;
-        right: 0;
-        background-color: white;
-        flex-direction: column;
-        padding: 1rem;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        z-index: 9999;
         width: 100%;
-        justify-content: flex-start;
+        flex-direction: column;
+        background: white;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        padding: 1rem;
+        z-index: 9999;
       }
-
-      .menu-header.ativo {
+      nav ul.ativo {
         display: flex;
       }
     }
-
     .botoes-rodape {
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
-      margin: 2rem 0 3rem 0;
+      gap: 1rem;
+      margin: 2rem 0;
     }
-
     .botoes-rodape a {
-      background-color: purple;
+      background: purple;
       color: white;
-      padding: 0.75rem 2rem;
-      font-weight: bold;
-      font-size: 1.1rem;
-      border-radius: 6px;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
       text-decoration: none;
-      transition: background-color 0.3s ease;
     }
-
     .botoes-rodape a:hover {
-      background-color: #4b0082;
+      background: #4b0082;
     }
   </style>
 </head>
-
 <body>
   <section class="inicio">
     <header>
-      <h1><a href="../../index.html"><span>Game</span>Scope</a></h1>
-      <div class="hamburguer" aria-label="Menu hamburguer" role="button" tabindex="0">
-        <span class="barra"></span>
-        <span class="barra"></span>
-        <span class="barra"></span>
+      <h1><a href="../../index.html">GameScope</a></h1>
+      <div class="hamburguer" id="hamburguer">
+        <div class="barra"></div>
+        <div class="barra"></div>
+        <div class="barra"></div>
       </div>
       <nav>
-        <ul class="menu-header">
-          <li><a href="./jogos.html" class="item-menu">JOGOS</a></li>
-          <li><a href="./apps.html" class="item-menu">APPS</a></li>
-          <li><a href="./online.html" class="item-menu">ONLINE</a></li>
+        <ul id="menu">
+          <li><a href="./jogos.html">JOGOS</a></li>
+          <li><a href="./apps.html">APPS</a></li>
+          <li><a href="./online.html">ONLINE</a></li>
         </ul>
       </nav>
     </header>
@@ -151,7 +125,7 @@
     </center>
 
     <main class="cards-container">
-      <!-- seus jogos -->
+      <!-- seus cards de jogos -->
       <a href="https://www.mediafire.com/file/bf55vh93gjh9bpu/3159330.zip/file" class="card-jogo">
         <img src="../assets/img2.png" alt="Capa do Assassin's Creed" />
         <h3>Assassin's Creed</h3>
@@ -204,24 +178,19 @@
       </a>
     </main>
 
-    <!-- rodapé automático já corrigido -->
     <div class="botoes-rodape">
       <a href="./jogos.html">JOGOS</a>
       <a href="./apps.html">APPS</a>
       <a href="./online.html">ONLINE</a>
     </div>
-
   </section>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const hamburguer = document.querySelector('.hamburguer');
-      const menu = document.querySelector('.menu-header');
-      hamburguer.addEventListener('click', () => {
-        menu.classList.toggle('ativo');
-      });
+    const hamburguer = document.getElementById("hamburguer");
+    const menu = document.getElementById("menu");
+    hamburguer.addEventListener("click", () => {
+      menu.classList.toggle("ativo");
     });
   </script>
 </body>
-
 </html>
