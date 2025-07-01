@@ -44,7 +44,7 @@
       gap: 1rem;
     }
 
-    /* Aqui só aumentei o tamanho da fonte das palavras JOGOS e ONLINE */
+    /* Tamanho da fonte das palavras JOGOS e ONLINE */
     .item-menu {
       font-size: 1.8rem;
       white-space: nowrap;
@@ -150,6 +150,27 @@
         width: 160px;
       }
     }
+	.botoes-rodape {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 2rem 0 3rem 0;
+    }
+
+    .botoes-rodape a {
+      background-color: purple;
+      color: white;
+      padding: 0.75rem 2rem;
+      font-weight: bold;
+      font-size: 1.1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .botoes-rodape a:hover {
+      background-color: #4b0082;
+    }
   </style>
 </head>
 
@@ -164,8 +185,9 @@
       </div>
       <nav>
         <ul class="menu-header">
-          <li><a href="./jogos.html" class="item-menu">Jogos</a></li>
-          <li><a href="./online.html" class="item-menu">Online</a></li>
+          <li><a href="./jogos.html" class="item-menu">JOGOS</a></li>
+          <li><a href="./apps.html" class="item-menu">APPS</a></li>
+          <li><a href="./online.html" class="item-menu">ONLINE</a></li>
         </ul>
       </nav>
     </header>
@@ -189,6 +211,12 @@
         </a>
       </center>
     </main>
+	<!-- rodapé automático já corrigido -->
+    <div class="botoes-rodape">
+      <a href="./jogos.html">JOGOS</a>
+      <a href="./apps.html">APPS</a>
+      <a href="./online.html">ONLINE</a>
+    </div>
   </section>
 
   <script>

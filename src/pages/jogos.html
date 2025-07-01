@@ -19,7 +19,7 @@
       align-items: center;
       flex-wrap: wrap;
       padding: 1rem 0;
-      position: relative; /* importante para posicionar o menu absoluto dentro do header */
+      position: relative;
     }
 
     header h1 a {
@@ -29,8 +29,8 @@
 
     .menu-header {
       display: flex;
-      justify-content: center; /* centraliza os links */
-      gap: 3rem; /* espaçamento entre os links */
+      justify-content: center;
+      gap: 3rem;
       margin: 0;
       padding: 0;
       list-style: none;
@@ -38,7 +38,7 @@
     }
 
     .item-menu {
-      font-size: 2rem; /* aumenta o tamanho da fonte */
+      font-size: 2rem;
       white-space: nowrap;
       color: inherit;
       text-decoration: none;
@@ -59,7 +59,6 @@
       transition: 0.3s;
     }
 
-    /* Responsividade */
     @media (max-width: 480px) {
       .hamburguer {
         display: flex;
@@ -71,18 +70,40 @@
         top: 100%;
         left: 0;
         right: 0;
-        background-color: white; /* fundo branco para cobrir imagens */
+        background-color: white;
         flex-direction: column;
         padding: 1rem;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        z-index: 9999; /* z-index alto para aparecer na frente */
+        z-index: 9999;
         width: 100%;
-        justify-content: flex-start; /* para o menu móvel */
+        justify-content: flex-start;
       }
 
       .menu-header.ativo {
         display: flex;
       }
+    }
+
+    .botoes-rodape {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 2rem 0 3rem 0;
+    }
+
+    .botoes-rodape a {
+      background-color: purple;
+      color: white;
+      padding: 0.75rem 2rem;
+      font-weight: bold;
+      font-size: 1.1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .botoes-rodape a:hover {
+      background-color: #4b0082;
     }
   </style>
 </head>
@@ -99,38 +120,37 @@
       <nav>
         <ul class="menu-header">
           <li><a href="./jogos.html" class="item-menu">JOGOS</a></li>
+          <li><a href="./apps.html" class="item-menu">APPS</a></li>
           <li><a href="./online.html" class="item-menu">ONLINE</a></li>
         </ul>
       </nav>
     </header>
 
     <center>
-  <p>
-    Caso seu jogo não apareça aí, baixe um dos nossos programinhas clicando nesse botão: 
-	<br><br>
-	(Não precisa jogar os arquivos no Steam Tools, ele faz tudo automático pra você, você apenas terá que inserir o id do jogo que você pode pegar do site SteamDB)
-	<BR><BR>
-    <button
-      onclick="window.open('https://www.mediafire.com/file/s7wsp0o8l3sr3ng/GameScope.rar/file','_blank')"
-      style="color: purple; text-decoration: underline; font-size: inherit; background: none; border: 1px solid purple; padding: 0.5rem 1rem; cursor: pointer;"
-    >
-      Baixar GameScope
-    </button>
-	<button
-      onclick="window.open('https://www.mediafire.com/file/8whgezxkwgkx06d/GameScope2.exe/file','_blank')"
-      style="color: purple; text-decoration: underline; font-size: inherit; background: none; border: 1px solid purple; padding: 0.5rem 1rem; cursor: pointer;"
-    >
-      Baixar GameScope2
-    </button>
-	<BR><BR>
-    Após baixar o arquivo compactado do site, você vai extrair o arquivo compactado, depois você vai abrir o SteamTools e jogar os arquivos dentro dele 
-	<BR><BR><BR>
-	(Ele tem que estar aparecendo na tela para você jogar os arquivos)
-  </p>
-</center>
-
+      <p>
+        Caso seu jogo não apareça aí, baixe um dos nossos programinhas clicando nesse botão:
+        <br><br>
+        (Não precisa jogar os arquivos no Steam Tools, ele faz tudo automático pra você, você apenas terá que inserir o id do jogo que você pode pegar do site SteamDB)
+        <br><br>
+        <button
+          onclick="window.open('https://www.mediafire.com/file/s7wsp0o8l3sr3ng/GameScope.rar/file','_blank')"
+          style="color: purple; text-decoration: underline; font-size: inherit; background: none; border: 1px solid purple; padding: 0.5rem 1rem; cursor: pointer;">
+          Baixar GameScope
+        </button>
+        <button
+          onclick="window.open('https://www.mediafire.com/file/8whgezxkwgkx06d/GameScope2.exe/file','_blank')"
+          style="color: purple; text-decoration: underline; font-size: inherit; background: none; border: 1px solid purple; padding: 0.5rem 1rem; cursor: pointer;">
+          Baixar GameScope2
+        </button>
+        <br><br>
+        Após baixar o arquivo compactado do site, você vai extrair o arquivo compactado, depois você vai abrir o SteamTools e jogar os arquivos dentro dele
+        <br><br><br>
+        (Ele tem que estar aparecendo na tela para você jogar os arquivos)
+      </p>
+    </center>
 
     <main class="cards-container">
+      <!-- seus jogos -->
       <a href="https://www.mediafire.com/file/bf55vh93gjh9bpu/3159330.zip/file" class="card-jogo">
         <img src="../assets/img2.png" alt="Capa do Assassin's Creed" />
         <h3>Assassin's Creed</h3>
@@ -152,7 +172,8 @@
         <h3>GTA V</h3>
       </a>
       <a href="https://www.mediafire.com/file/qu9176gdtm888z1/1174180.rar/file" class="card-jogo">
-        <img src="https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA08519_00/12/i_3da1cf7c41dc7652f9b639e1680d96436773658668c7dc3930c441291095713b/i/icon0.png" alt="Capa do Red Dead Redemption 2" />
+        <img src="https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA08519_00/12/i_3da1cf7c41dc7652f9b639e1680d96436773658668c7dc3930c441291095713b/i/icon0.png"
+          alt="Capa do Red Dead Redemption 2" />
         <h3>Red Dead 2</h3>
       </a>
       <a href="https://www.mediafire.com/file/ereyrtq7lq5qgdh/1245620.zip/file" class="card-jogo">
@@ -164,34 +185,42 @@
         <h3>F1 25</h3>
       </a>
       <a href="https://www.mediafire.com/file/xedo76trwfqrkg4/1091500.zip/file" class="card-jogo">
-        <img src="https://assets.xboxservices.com/assets/f4/75/f475ff8f-4217-4040-99fb-bf86ed0fccb4.jpg?n=Cyberpunk-2077_GLP-Page-Hero-0_1083x1222.jpg" alt="Capa do Cyberpunk 2077" />
+        <img src="https://assets.xboxservices.com/assets/f4/75/f475ff8f-4217-4040-99fb-bf86ed0fccb4.jpg?n=Cyberpunk-2077_GLP-Page-Hero-0_1083x1222.jpg"
+          alt="Capa do Cyberpunk 2077" />
         <h3>Cyberpunk 2077</h3>
       </a>
-	  <a href="https://www.mediafire.com/file/r1j11vs6ojlvag9/1222140.zip/file" class="card-jogo">
+      <a href="https://www.mediafire.com/file/r1j11vs6ojlvag9/1222140.zip/file" class="card-jogo">
         <img src="https://cdn1.epicgames.com/columbine/offer/DETROIT2-860x1148-a03ac8673f779b286dcccc83dbe75249.jpg" alt="Capa do Detroit Become Human" />
         <h3>Detroit</h3>
-		</a>
-    <a href="https://www.mediafire.com/file/3mu6kt6y9od8tj4/2881650.zip/file" class="card-jogo">
+      </a>
+      <a href="https://www.mediafire.com/file/3mu6kt6y9od8tj4/2881650.zip/file" class="card-jogo">
         <img src="https://upload.wikimedia.org/wikipedia/en/6/63/Content_Warning_cover.jpg" alt="Capa do Content Warning" />
         <h3>Content Warning</h3>
-		</a>
-		<a href="https://www.mediafire.com/file/tvkmu5r665xliks/3241660.zip/file" class="card-jogo">
+      </a>
+      <a href="https://www.mediafire.com/file/tvkmu5r665xliks/3241660.zip/file" class="card-jogo">
         <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2025/03/r-e-p-o-tag-page-cover-art.jpg" alt="Capa do R.E.P.O" />
         <h3>R.E.P.O</h3>
-		</a>
-	</main>
+      </a>
+    </main>
+
+    <!-- rodapé automático já corrigido -->
+    <div class="botoes-rodape">
+      <a href="./jogos.html">JOGOS</a>
+      <a href="./apps.html">APPS</a>
+      <a href="./online.html">ONLINE</a>
+    </div>
+
   </section>
 
   <script>
-    // Ativa menu hamburguer
     document.addEventListener('DOMContentLoaded', function () {
       const hamburguer = document.querySelector('.hamburguer');
       const menu = document.querySelector('.menu-header');
-
       hamburguer.addEventListener('click', () => {
         menu.classList.toggle('ativo');
       });
     });
   </script>
 </body>
+
 </html>
