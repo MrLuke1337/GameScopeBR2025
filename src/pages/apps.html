@@ -7,19 +7,10 @@
   <title>GameScope | Apps</title>
   <link rel="stylesheet" href="../css/estilos.css" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: sans-serif;
-      background-color: #000;
-    }
-
-    .inicio {
-      padding: 0 1rem;
+        a.link-roxo {
+      color: purple;
+      font-size: inherit;
+      text-decoration: underline;
     }
 
     header {
@@ -27,125 +18,69 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      padding: 1rem;
+      padding: 1rem 0;
       position: relative;
     }
 
-    .logo {
-      flex: 1;
-      text-align: left;
-    }
-
-    .logo h1 {
-      font-size: clamp(1.5rem, 4vw, 2.5rem);
-      font-weight: bold;
-      color: white;
-    }
-
-    .logo h1 a span {
-      color: purple;
-    }
-
-    .logo h1 a {
-      text-decoration: none;
+    header h1 a {
       color: inherit;
+      text-decoration: none;
     }
 
     .menu-header {
       display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin: 0;
+      padding: 0;
       list-style: none;
-      gap: 2rem;
+      width: 100%;
     }
 
-    .item-menu {
-      font-size: clamp(1.2rem, 3vw, 2rem);
-      font-weight: bold;
-      color: #000;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
+  .item-menu {
+  color: #000;
+  transition: color 0.3s ease;
+}
+.item-menu:hover {
+  color: #6a0dad;
+}
 
-    .item-menu:hover {
-      color: #6a0dad;
-    }
 
     .hamburguer {
       display: none;
       flex-direction: column;
-      gap: 4px;
       cursor: pointer;
+      gap: 3px;
     }
 
     .barra {
       width: 25px;
       height: 3px;
-      background-color: #fff;
+      background-color: currentColor;
+      transition: 0.3s;
     }
 
-    .card {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 2rem;
-      margin: 2rem 0;
-      padding: 1rem;
-      color: white;
-    }
+    @media (max-width: 480px) {
+      .hamburguer {
+        display: flex;
+      }
 
-    .card-texto {
-      flex: 1;
-      min-width: 280px;
-    }
-
-    .card-texto h2 {
-      font-size: clamp(1.2rem, 4vw, 2rem);
-      margin-bottom: 1rem;
-    }
-
-    .card-texto p,
-    .card-texto li {
-      font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-      line-height: 1.5;
-    }
-
-    .card-img {
-      flex: 1;
-      min-width: 280px;
-      text-align: center;
-    }
-
-    .card-img img {
-      max-width: 100%;
-      border-radius: 8px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-    }
-
-    .card-img img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    @media (max-width: 768px) {
       .menu-header {
-        flex-direction: column;
+        display: none;
         position: absolute;
         top: 100%;
         left: 0;
         right: 0;
         background-color: white;
+        flex-direction: column;
         padding: 1rem;
-        display: none;
-        align-items: center;
-        z-index: 10;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+        width: 100%;
+        justify-content: flex-start;
       }
 
       .menu-header.ativo {
-        display: flex;
-      }
-
-      .hamburguer {
         display: flex;
       }
     }
@@ -202,6 +137,8 @@
         </p>
       </div>
       <div class="card-img">
+	  <img src="../assets/09a178348795ed3f76b1a63782ad2de4-desenho-animado-roxo-de-saturno-removebg-preview.png" alt="Instalador de aplicativos" />
+	  </a>
       </div>
     </div>
 </center>
