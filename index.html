@@ -16,6 +16,11 @@
     header h1 a {
       color: black;
       text-decoration: none;
+      transition: color 0.3s;
+    }
+    /* Cor fixa para o link GameScope quando ativo */
+    header h1 a.ativo {
+      color: rgba(127, 90, 240, 1);
     }
     .hamburguer {
       display: none;
@@ -45,6 +50,12 @@
     nav ul li a:hover {
       color: purple;
     }
+    nav ul li a:active {
+      color: rgba(127, 90, 240, 1);
+    }
+    nav ul li a.ativo {
+      color: rgba(127, 90, 240, 1);
+    }
     @media (max-width: 480px) {
       .hamburguer {
         display: flex;
@@ -56,13 +67,27 @@
         left: 0;
         width: 100%;
         flex-direction: column;
-        background: white;
+        background: #2c2c34 !important; /* cinza escuro igual aos outros */
+        border: 2px solid #7f5af0 !important; /* borda roxa igual aos outros */
+        border-radius: 10px !important;
         box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         padding: 1rem;
         z-index: 9999;
       }
       nav ul.ativo {
         display: flex;
+      }
+      nav ul li a {
+        color: black;
+      }
+      nav ul li a:hover {
+        color: purple;
+      }
+      nav ul li a:active {
+        color: rgba(127, 90, 240, 1);
+      }
+      nav ul li a.ativo {
+        color: rgba(127, 90, 240, 1);
       }
     }
     .botoes-rodape {
@@ -86,7 +111,8 @@
 <body>
   <section class="inicio">
     <header>
-      <h1><a href="index.html">GameScope</a></h1>
+      <!-- Apliquei a classe ativo no link GameScope -->
+      <h1><a href="index.html" class="ativo">GameScope</a></h1>
       <div class="hamburguer" id="hamburguer">
         <div class="barra"></div>
         <div class="barra"></div>
@@ -133,14 +159,7 @@
         </a>
       </div>
     </div>
-
-    <div class="botoes-rodape">
-      <a href="./src/pages/jogos.html">JOGOS</a>
-      <a href="./src/pages/apps.html">APPS</a>
-      <a href="./src/pages/online.html">ONLINE</a>
-    </div>
   </section>
-
   <script>
     const hamburguer = document.getElementById("hamburguer");
     const menu = document.getElementById("menu");

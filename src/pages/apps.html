@@ -16,6 +16,11 @@
     header h1 a {
       color: black;
       text-decoration: none;
+      transition: color 0.3s;
+    }
+    /* Cor fixa para o link GameScope quando ativo */
+    header h1 a.ativo {
+      color: rgba(127, 90, 240, 1);
     }
     .hamburguer {
       display: none;
@@ -45,6 +50,14 @@
     nav ul li a:hover {
       color: purple;
     }
+    /* Cor ao clicar no link */
+    nav ul li a:active {
+      color: rgba(127, 90, 240, 1);
+    }
+    /* Cor para link ativo (página atual) */
+    nav ul li a.ativo {
+      color: rgba(127, 90, 240, 1);
+    }
     @media (max-width: 480px) {
       .hamburguer {
         display: flex;
@@ -56,13 +69,27 @@
         left: 0;
         width: 100%;
         flex-direction: column;
-        background: white;
+        background: #2c2c34 !important; /* cinza escuro igual ao index */
+        border: 2px solid #7f5af0 !important; /* borda roxa igual ao index */
+        border-radius: 10px !important;
         box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         padding: 1rem;
         z-index: 9999;
       }
       nav ul.ativo {
         display: flex;
+      }
+      nav ul li a {
+        color: black;
+      }
+      nav ul li a:hover {
+        color: purple;
+      }
+      nav ul li a:active {
+        color: rgba(127, 90, 240, 1);
+      }
+      nav ul li a.ativo {
+        color: rgba(127, 90, 240, 1);
       }
     }
     .botoes-rodape {
@@ -86,7 +113,8 @@
 <body>
   <section class="inicio">
     <header>
-      <h1><a href="../../index.html">GameScope</a></h1>
+      <!-- Adicionei a classe ativo no link GameScope -->
+      <h1><a href="../../index.html" class="ativo">GameScope</a></h1>
       <div class="hamburguer" id="hamburguer">
         <div class="barra"></div>
         <div class="barra"></div>
@@ -95,7 +123,7 @@
       <nav>
         <ul id="menu">
           <li><a href="./jogos.html">JOGOS</a></li>
-          <li><a href="./apps.html">APPS</a></li>
+          <li><a href="./apps.html" class="ativo">APPS</a></li>
           <li><a href="./online.html">ONLINE</a></li>
         </ul>
       </nav>
@@ -131,14 +159,7 @@
         </a>
       </div>
     </div>
-
-    <div class="botoes-rodape">
-      <a href="./jogos.html">JOGOS</a>
-      <a href="./apps.html">APPS</a>
-      <a href="./online.html">ONLINE</a>
-    </div>
   </section>
-
   <script>
     const hamburguer = document.getElementById("hamburguer");
     const menu = document.getElementById("menu");
