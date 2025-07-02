@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GameScope | Online</title>
-  <link rel="stylesheet" href="../css/jogos.css" />
-    <style>
+  <title>GameScope | Streaming</title>
+  <link rel="stylesheet" href="../css/estilos.css" />
+  <style>
     header {
       display: flex;
       justify-content: space-between;
@@ -14,12 +14,12 @@
       position: relative;
     }
     header h1 a {
-      color: black;
+      color: rgba(127,90,240,1);
       text-decoration: none;
       transition: color 0.3s;
     }
     header h1 a.ativo {
-      color: rgba(127, 90, 240, 1);
+      color: rgba(127,90,240,1);
     }
     .hamburguer {
       display: none;
@@ -47,13 +47,13 @@
       transition: color 0.3s;
     }
     nav ul li a:hover {
-      color: rgba(127, 90, 240, 1) !important;
+      color: rgba(127,90,240,1) !important;
     }
     nav ul li a:active {
-      color: rgba(127, 90, 240, 1);
+      color: rgba(127,90,240,1);
     }
     nav ul li a.ativo {
-      color: rgba(127, 90, 240, 1);
+      color: rgba(127,90,240,1);
     }
     @media (max-width: 480px) {
       .hamburguer {
@@ -80,13 +80,13 @@
         color: black;
       }
       nav ul li a:hover {
-        color: rgba(127, 90, 240, 1) !important;
+        color: rgba(127,90,240,1) !important;
       }
       nav ul li a:active {
-        color: rgba(127, 90, 240, 1);
+        color: rgba(127,90,240,1);
       }
       nav ul li a.ativo {
-        color: rgba(127, 90, 240, 1);
+        color: rgba(127,90,240,1);
       }
     }
     .botoes-rodape {
@@ -96,21 +96,21 @@
       margin: 2rem 0;
     }
     .botoes-rodape a {
-      background: rgba(127, 90, 240, 1);
+      background: rgba(127,90,240,1);
       color: white;
       padding: 0.5rem 1rem;
       border-radius: 5px;
       text-decoration: none;
     }
     .botoes-rodape a:hover {
-      background: rgba(127, 90, 240, 1);
+      background: rgba(127,90,240,1);
     }
   </style>
 </head>
 <body>
   <section class="inicio">
     <header>
-      <h1><a href="../../index.html" class="ativo">GameScope</a></h1>
+      <h1><a href="../../index.html">GameScope</a></h1>
       <div class="hamburguer" id="hamburguer">
         <div class="barra"></div>
         <div class="barra"></div>
@@ -120,28 +120,44 @@
         <ul id="menu">
           <li><a href="jogos.html">JOGOS</a></li>
           <li><a href="apps.html">APPS</a></li>
-          <li><a href="streaming.html">STREAMING</a></li>
+          <li><a href="streaming.html" class="ativo">STREAMING</a></li>
           <li><a href="online.html">ONLINE</a></li>
         </ul>
       </nav>
     </header>
 
-    <main class="online-content">
-      <h2>Jogue Online com a Comunidade GameScope!</h2>
-      <p>
-        Quer jogar online com outros jogadores? Basta clicar na imagem abaixo para entrar no site online-fix.me, crie uma conta e procure o jogo desejado.
-      </p>
-      <p>
-        Caso seu jogo não apareça, infelizmente ele não tem suporte para online. Se aparecer, clique em “Baixar correção do servidor” e siga as instruções.
-      </p>
-      <center class="online-img-link">
-        <a href="https://online-fix.me/" target="_blank">
-          <img src="images-removebg-preview.png" alt="Acessar online-fix.me" style="max-width:220px;">
-        </a>
-      </center>
-    </main>
-  </section>
+    <div class="card">
+      <div class="card-texto">
+        <h2>ASSISTA O MELHOR COM <span>MEGAFLIX</span></h2>
+        <p>
+          O MegaFlix é o seu destino definitivo para filmes, séries e documentários de forma prática, rápida e gratuita.
+        </p>
+      </div>
+      <div class="card-img">
+        <img src="https://www.teclasap.com.br/wp-content/uploads/2023/11/STREAMING-1024x576.webp" alt="MegaFlix" />
+      </div>
+    </div>
 
+    <div class="card card-secundario">
+      <div class="card-texto">
+        <h2>COMO USAR O MEGAFLIX</h2>
+        <p>Veja como começar a aproveitar o MegaFlix:</p>
+        <ul>
+          <li>Baixe o aplicativo MegaFlix apenas clicando na imagem ao lado.</li>
+          <li>Neste arquivo WinRAR existem 4 opções de instalação.</li>
+          <li>Após extrair o arquivo, instale a versão correspondente ao dispositivo desejado.</li>
+          <li>Crie sua conta gratuitamente no app para salvar onde parou aquela série ou filme que você tanto gosta.</li>
+          <li>Comece a explorar nosso catálogo com milhares de opções.</li>
+        </ul>
+        <p>O MegaFlix é sinônimo de entretenimento sem limites.</p>
+      </div>
+      <div class="card-img">
+        <a href="https://www.mediafire.com/file/k8foxdlhwgbmv5d/MegaFlix.rar/file" target="_blank">
+          <img src="../assets/megaflix.png" alt="Baixar MegaFlix" />
+        </a>
+      </div>
+    </div>
+  </section>
   <script>
     const hamburguer = document.getElementById("hamburguer");
     const menu = document.getElementById("menu");
