@@ -14,7 +14,7 @@
     --roxo-escuro: #5c3f91;
     --texto-claro: #f5f5f7;
     --texto-escuro: #a1a1b8;
-    --hover: #e0aaff;
+    --hover: rgba(127, 90, 240, 1);
 }
 
 html {
@@ -71,16 +71,47 @@ header h1 {
     position: relative;
 }
 
+header h1 a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+header h1 a.ativo {
+    color: rgba(127, 90, 240, 1);
+}
+
 span {
     color: var(--roxo-vibrante);
     margin-left: 10px;
 }
 
+/* MENU HEADER */
 .menu-header {
     display: flex;
     gap: 2rem;
 }
 
+/* Estilo do menu */
+nav ul li a {
+    color: black;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: rgba(127, 90, 240, 1) !important;
+}
+
+nav ul li a:active {
+    color: rgba(127, 90, 240, 1);
+}
+
+nav ul li a.ativo {
+    color: rgba(127, 90, 240, 1);
+}
+
+/* Hamburguer */
 .hamburguer {
     cursor: pointer;
     position: relative;
@@ -99,6 +130,7 @@ span {
     transition: .5s;
 }
 
+/* Card */
 .card {
     display: flex;
     align-items: center;
@@ -156,9 +188,10 @@ span {
         text-align: center;
         flex-direction: column;
         justify-content: center;
+        transition: left 0.3s ease;
     }
 
-    .active {
+    .menu-header.active {
         left: 0;
     }
 
