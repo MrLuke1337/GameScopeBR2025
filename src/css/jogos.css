@@ -86,6 +86,7 @@ span {
     position: relative;
     z-index: 2;
     display: none;
+    padding: 1rem;
 }
 
 .barra {
