@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta property="og:title" content="MegaFlix Download" />
+  <meta property="og:locale" content="pt-BR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="MegaFlix" />
+  <meta name="description" content="Baixar MegaFlix: Filmes, Séries e TV Ao Vivo. Atualizado" />
+  <meta property="og:description" content="Baixar MegaFlix: Filmes, Séries e TV Ao Vivo. Atualizado" />
+  <meta name="keywords" content="megaflix,ver,assistir,filmes,series,seriados,animes,online,gratis,torrent,legendado,dublado,2021,2022,Series,HD,720p,1080p" />
+  <meta property="og:image" content="1024x500.png" />
+  <title>MegaFlix: Filmes, Séries e Tv Ao Vivo</title>
+  <link rel="stylesheet" href="../css/estilos.css" />
+
+  <style>
+    body {
+      background-color: rgba(127, 90, 240, 1);
+      min-height: 100vh;
+      color: #fff;
+      font-family: "Roboto", sans-serif;
+      margin: 0;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background-color: rgba(18, 20, 23, 0.95);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-radius: 0 0 10px 10px;
+    }
+
+    header h1 a {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .hamburguer {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+      width: 28px;
+      height: 24px;
+      justify-content: center;
+    }
+
+    .barra {
+      height: 3px;
+      background-color: white;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .hamburguer.active .barra:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburguer.active .barra:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburguer.active .barra:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    nav ul.menu-header {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul.menu-header li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+      padding: 6px 0;
+    }
+
+    nav ul.menu-header li a:hover,
+    nav ul.menu-header li a.ativo {
+      color: rgba(127, 90, 240, 1);
+    }
+
+    @media (max-width: 900px) {
+      nav ul.menu-header {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(18, 20, 23, 0.95);
+        position: absolute;
+        top: 56px;
+        right: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(127, 90, 240, 0.7);
+        width: 180px;
+        padding: 10px 0;
+        z-index: 1000;
+      }
+
+      nav ul.menu-header.active {
+        display: flex;
+      }
+
+      nav ul.menu-header li {
+        margin: 10px 0;
+        text-align: center;
+      }
+
+      .hamburguer {
+        display: flex;
+      }
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 0 80px;
+    }
+
+    .container .max-w {
+      max-width: 1100px;
+      width: 90%;
+    }
+    .container .max-w .logo {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+    .container .max-w .logo img {
+      width: 200px;
+    }
+    .container .max-w .about {
+      width: 100%;
+      font-size: 21px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      color: #fff;
+    }
+    .container .max-w .about .left {
+      width: 40%;
+    }
+    .container .max-w .about .left .title {
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    .container .max-w .about .left .desc {
+      font-size: 18px;
+    }
+    .container .max-w .about .left .buttonDownload {
+      font-size: 17px;
+      padding: 8px;
+      background-color: rgba(0,0,0,0.7);
+      height: 35px;
+      width: 170px;
+      border-radius: 4px;
+      color: #fff;
+      margin-top: 40px;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .container .max-w .about .left .buttonDownload:hover {
+      background-color: rgba(127, 90, 240, 1);
+    }
+    .container .max-w .about .right {
+      width: 60%;
+    }
+    .container .max-w .about .right img {
+      width: 100%;
+    }
+
+    .container .max-w .download {
+      width: 100%;
+      display: none;
+      color: #fff;
+    }
+
+    .container .max-w .download .title {
+      font-size: 2rem;
+      font-weight: 200;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .container .max-w .download .items {
+      margin-top: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .container .max-w .download .items .item {
+      display: flex;
+      flex-direction: column;
+      font-size: 22px;
+      font-weight: 300;
+      align-items: center;
+      color: #fff;
+      max-width: 180px;
+    }
+
+    .container .max-w .download .items .item img {
+      width: 100%;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+
+    .container .max-w .download .items .item .button {
+      font-size: 17px;
+      background-color: rgba(0,0,0,0.7);
+      height: 35px;
+      width: 130px;
+      border-radius: 31px;
+      color: #fff;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .container .max-w .download .items .item .button:hover {
+      background-color: rgba(127, 90, 240, 1);
+    }
+
+    @media screen and (max-width: 768px) {
+      .container .max-w .about .left {
+        width: 100%;
+      }
+      .container .max-w .about .right {
+        display: none;
+      }
+      .container .max-w .about .left .buttonDownload {
+        margin-left: calc(50% - 85px);
+      }
+      .container .max-w .download .items {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1><a href="../../index.html" class="ativo">GAMESCOPE</a></h1>
+    <div class="hamburguer" id="hamburguer">
+      <div class="barra"></div>
+      <div class="barra"></div>
+      <div class="barra"></div>
+    </div>
+    <nav>
+      <ul id="menu" class="menu-header">
+        <li><a href="jogos.html">GAMES</a></li>
+        <li><a href="apps.html">APPS</a></li>
+        <li><a href="streaming.html" class="ativo">STREAMING</a></li>
+        <li><a href="online.html">ONLINE</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="max-w">
+      <div class="logo"><img src="Captura_de_tela_2025-07-14_150920-removebg-preview.png" alt="MegaFlix Logo"></div>
+      <div class="about">
+        <div class="left">
+          <div class="title">Compatível com vários dispositivos</div>
+          <div class="desc">
+            O MegaFlix oferece entretenimento de alta qualidade em uma ampla gama de dispositivos, incluindo celulares, TV Box, Smart TV e Computadores.
+          </div>
+          <div class="buttonDownload">Baixar</div>
+        </div>
+        <div class="right"><img src="https://i.imgur.com/GYrRPpM.png" alt="MegaFlix Dispositivo"></div>
+      </div>
+      <div class="download">
+        <div class="title">Escolha o dispositivo para baixar</div>
+        <div class="items">
+
+          <div class="item">
+            <img src="https://i.imgur.com/olEmJbR.png" alt="Celular">
+            <span>Celular</span>
+            <a href="https://www.mediafire.com/file/82dcf0354u2n44e/MegaFlix.4.5.2.apk/file"><div class="button">BAIXAR</div></a>
+          </div>
+
+          <div class="item">
+            <img src="https://i.imgur.com/l01GwbY.png" alt="SmartTV">
+            <span>SmartTV</span>
+            <a href="https://www.mediafire.com/file/mujble1rcoghefa/1.0.3.3.apk/file"><div class="button">BAIXAR</div></a>
+          </div>
+
+          <div class="item">
+            <img src="https://i.imgur.com/NGC0LNa.png" alt="Computador">
+            <span>Computador</span>
+            <a href="https://www.mediafire.com/file/ieaxfo9fowbc97b/MegaFlix_Setup_1.0.3.exe/file"><div class="button">BAIXAR</div></a>
+          </div>
+
+          <div class="item">
+            <img src="https://i.imgur.com/oEDXBOo.png" alt="TV Box">
+            <span>TV Box</span>
+            <a href="https://www.mediafire.com/file/j70a8z9vaky2zwl/1.0.3.3%25282%2529.apk/file"><div class="button">BAIXAR</div></a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const hamburguer = document.getElementById("hamburguer");
+    const menu = document.getElementById("menu");
+
+    hamburguer.addEventListener("click", () => {
+      menu.classList.toggle("active");
+      hamburguer.classList.toggle("active");
+    });
+
+    document.querySelector(".buttonDownload").addEventListener("click", () => {
+      document.querySelector(".about").classList.add("off");
+      setTimeout(() => {
+        document.querySelector(".download").classList.add("on");
+        document.querySelector(".download").style.display = "block";
+        document.querySelector(".about").style.display = "none";
+      }, 300);
+    });
+  </script>
+</body>
+</html>
