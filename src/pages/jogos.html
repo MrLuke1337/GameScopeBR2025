@@ -26,6 +26,9 @@
       flex-direction: column;
       cursor: pointer;
       gap: 5px;
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
     }
     .barra {
       width: 25px;
@@ -89,22 +92,6 @@
         color: rgba(127,90,240,1);
       }
     }
-    .botoes-rodape {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin: 2rem 0;
-    }
-    .botoes-rodape a {
-      background: rgba(127,90,240,1);
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      text-decoration: none;
-    }
-    .botoes-rodape a:hover {
-      background: rgba(127,90,240,1);
-    }
   </style>
 </head>
 <body>
@@ -118,7 +105,7 @@
       </div>
       <nav>
         <ul id="menu">
-          <li><a href="jogos.html">GAMES</a></li>
+          <li><a href="jogos.html" class="ativo">GAMES</a></li>
           <li><a href="apps.html">APPS</a></li>
           <li><a href="streaming.html">STREAMING</a></li>
           <li><a href="online.html">ONLINE</a></li>
@@ -137,19 +124,13 @@
           style="color: rgba(127,90,240,1); text-decoration: underline; font-size: inherit; background: none; border: 1px solid rgba(127,90,240,1); padding: 0.5rem 1rem; cursor: pointer;"
         >
           Baixar GameScope
-       
+        </button>
         <button
           onclick="window.open('https://www.mediafire.com/file/8whgezxkwgkx06d/GameScope2.exe/file','_blank')"
           style="color: rgba(127,90,240,1); text-decoration: underline; font-size: inherit; background: none; border: 1px solid rgba(127,90,240,1); padding: 0.5rem 1rem; cursor: pointer;"
         >
           Baixar GameScope2
         </button>
-		<button
-          onclick="window.open('https://www.mediafire.com/file/ot5tcgk279ok077/Crackear_jogos_que_n%25C3%25A3o_funcionam_com_metodo_Steam_Tools.mp4/file')"
-          style="color: rgba(127,90,240,1); text-decoration: underline; font-size: inherit; background: none; border: 1px solid rgba(127,90,240,1); padding: 0.5rem 1rem; cursor: pointer;"
-        >
-          Tutorial para jogos que não funcionam no método Steam Tools
-		  </button>
         <br /><br />
         Após baixar o arquivo compactado do site, você vai extrair o arquivo compactado, depois você vai abrir o SteamTools e jogar os arquivos dentro dele
         <br /><br /><br />
@@ -226,11 +207,12 @@
   </section>
 
   <script>
-    const hamburguer = document.getElementById("hamburguer");
-    const menu = document.getElementById("menu");
-    hamburguer.addEventListener("click", () => {
-      menu.classList.toggle("ativo");
-    });
-  </script>
+      const hamburguer = document.getElementById("hamburguer");
+      const menu = document.getElementById("menu");
+      hamburguer.addEventListener("click", () => {
+        menu.classList.toggle("ativo");
+      });
+    </script>
+  </section>
 </body>
 </html>
