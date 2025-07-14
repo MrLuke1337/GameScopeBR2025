@@ -12,6 +12,7 @@
       align-items: center;
       padding: 1rem;
       position: relative;
+      z-index: 10;
     }
     header h1 a {
       color: black;
@@ -19,7 +20,7 @@
       transition: color 0.3s;
     }
     header h1 a.ativo {
-      color: rgba(127,90,240,1);
+      color: rgba(127, 90, 240, 1);
     }
     .hamburguer {
       display: none;
@@ -27,8 +28,9 @@
       cursor: pointer;
       gap: 5px;
       position: absolute;
-      right: 1rem;
       top: 1rem;
+      right: 1rem;
+      z-index: 99999;
     }
     .barra {
       width: 25px;
@@ -50,14 +52,15 @@
       transition: color 0.3s;
     }
     nav ul li a:hover {
-      color: rgba(127,90,240,1) !important;
+      color: rgba(127, 90, 240, 1) !important;
     }
     nav ul li a:active {
-      color: rgba(127,90,240,1);
+      color: rgba(127, 90, 240, 1);
     }
     nav ul li a.ativo {
-      color: rgba(127,90,240,1);
+      color: rgba(127, 90, 240, 1);
     }
+
     @media (max-width: 480px) {
       .hamburguer {
         display: flex;
@@ -83,13 +86,13 @@
         color: black;
       }
       nav ul li a:hover {
-        color: rgba(127,90,240,1) !important;
+        color: rgba(127, 90, 240, 1) !important;
       }
       nav ul li a:active {
-        color: rgba(127,90,240,1);
+        color: rgba(127, 90, 240, 1);
       }
       nav ul li a.ativo {
-        color: rgba(127,90,240,1);
+        color: rgba(127, 90, 240, 1);
       }
     }
   </style>
@@ -139,7 +142,7 @@
     </center>
 
     <main class="cards-container">
-      <!-- seus cards de jogos -->
+      <!-- cards de jogos -->
       <a href="https://www.mediafire.com/file/bf55vh93gjh9bpu/3159330.zip/file" class="card-jogo">
         <img src="../assets/img2.png" alt="Capa do Assassin's Creed" />
         <h3>Assassin's Creed</h3>
@@ -206,13 +209,12 @@
     </main>
   </section>
 
-  <script>
-      const hamburguer = document.getElementById("hamburguer");
-      const menu = document.getElementById("menu");
-      hamburguer.addEventListener("click", () => {
-        menu.classList.toggle("ativo");
-      });
-    </script>
-  </section>
+   <script>
+    const hamburguer = document.getElementById("hamburguer");
+    const menu = document.getElementById("menu");
+    hamburguer.addEventListener("click", () => {
+      menu.classList.toggle("ativo");
+    });
+  </script>
 </body>
 </html>
