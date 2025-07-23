@@ -12,15 +12,11 @@
   <meta name="keywords" content="megaflix,ver,assistir,filmes,series,seriados,animes,online,gratis,torrent,legendado,dublado,2021,2022,Series,HD,720p,1080p" />
   <meta property="og:image" content="1024x500.png" />
   <title>MegaFlix: Filmes, Séries e Tv Ao Vivo</title>
-  <link rel="stylesheet" href="../css/estilos.css" />
+  <link rel="stylesheet" href="./src/css/estilos.css" />
 
- <style>
-  @media (max-width: 900px) {
-    .hamburguer { display: flex !important; }
-  }
-
+  <style>
     body {
-      background-color: rgba(127, 90, 240, 1);
+      background-color: #121417;
       min-height: 100vh;
       color: #fff;
       font-family: "Roboto", sans-serif;
@@ -30,7 +26,6 @@
     header {
       display: flex;
       align-items: center;
-      justify-content: space-between;
       padding: 1rem 2rem;
       background-color: rgba(18, 20, 23, 0.95);
       box-shadow: 0 2px 10px rgba(0,0,0,0.6);
@@ -38,12 +33,17 @@
       top: 0;
       z-index: 1100;
       border-radius: 0 0 10px 10px;
+      gap: 20px;
     }
 
-    header h1 a {
+    header h2 {
+      margin: 0;
+    }
+
+    header h2 a {
       font-size: 1.8rem;
       font-weight: 700;
-      color: #fff;
+      color: rgba(127, 90, 240, 1);
       text-decoration: none;
     }
 
@@ -66,20 +66,12 @@
       transition: all 0.3s ease;
     }
 
-    .barra:nth-child(1) {
-      width: 28px;
-    }
-
-    .barra:nth-child(2) {
-      width: 18px;
-    }
-
-    .barra:nth-child(3) {
-      width: 28px;
-    }
+    .barra:nth-child(1) { width: 28px; }
+    .barra:nth-child(2) { width: 18px; }
+    .barra:nth-child(3) { width: 28px; }
 
     .hamburguer.active .barra:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
+      transform: translateY(9px) rotate(45deg);
     }
 
     .hamburguer.active .barra:nth-child(2) {
@@ -87,7 +79,11 @@
     }
 
     .hamburguer.active .barra:nth-child(3) {
-      transform: rotate(-45deg) translate(6px, -6px);
+      transform: translateY(-9px) rotate(-45deg);
+    }
+
+    nav {
+      margin-left: auto;
     }
 
     nav ul.menu-header {
@@ -95,6 +91,8 @@
       display: flex;
       gap: 30px;
       transition: all 0.3s ease;
+      margin: 0;
+      padding: 0;
     }
 
     nav ul.menu-header li a {
@@ -114,6 +112,10 @@
     @media (max-width: 900px) {
       .hamburguer {
         display: flex;
+      }
+
+      nav {
+        margin-left: unset;
       }
 
       nav ul.menu-header {
@@ -140,231 +142,278 @@
       }
     }
 
-    .container {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .inicio {
       padding: 40px 0 80px;
-    }
-
-    .container .max-w {
-      max-width: 1100px;
-      width: 90%;
-    }
-
-    .container .max-w .logo {
-      text-align: center;
-      margin-bottom: 80px;
-    }
-
-    .container .max-w .logo img {
-      width: 200px;
-    }
-
-    .container .max-w .about {
-      width: 100%;
-      font-size: 21px;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card {
+      background-color: rgba(18, 20, 23, 0.9);
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      margin: 40px auto;
+      padding: 30px;
+      max-width: 1000px;
+      width: 90%;
+      display: flex;
       flex-wrap: wrap;
+      align-items: center;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .card-secundario {
+      flex-direction: row-reverse;
+    }
+
+    .card-texto {
+      flex: 1;
+      min-width: 300px;
+      max-width: 60%;
+    }
+
+    .card-texto h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 15px;
       color: #fff;
     }
 
-    .container .max-w .about .left {
-      width: 40%;
+    .card-texto h2 span {
+      color: rgba(127, 90, 240, 1);
     }
 
-    .container .max-w .about .left .title {
-      font-size: 40px;
-      font-weight: 700;
+    .card-texto p {
+      font-size: 1.1rem;
+      line-height: 1.6;
       margin-bottom: 15px;
     }
 
-    .container .max-w .about .left .desc {
-      font-size: 18px;
+    .card-texto ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
 
-    .container .max-w .about .left .buttonDownload {
-      font-size: 17px;
-      padding: 8px;
-      background-color: rgba(0,0,0,0.7);
-      height: 35px;
-      width: 170px;
-      border-radius: 4px;
-      color: #fff;
+    .card-texto ul li {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .card-texto ul li::before {
+      content: "•";
+      color: rgba(127, 90, 240, 1);
+      position: absolute;
+      left: 0;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .card-img {
+      flex: 1;
+      min-width: 250px;
+      max-width: 35%;
+      text-align: center;
+    }
+
+    .card-img img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .megaflix-logo-container {
+      text-align: center;
       margin-top: 40px;
-      font-weight: 400;
-      display: flex;
+      margin-bottom: 40px;
+    }
+
+    .megaflix-logo-container img {
+      width: 200px;
+      height: auto;
+    }
+
+    .megaflix-download-button {
+      font-size: 17px;
+      padding: 10px 20px;
+      background-color: rgba(0,0,0,0.7);
+      border-radius: 8px;
+      color: #fff;
+      font-weight: 600;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      margin-top: 30px;
+      text-decoration: none;
     }
 
-    .container .max-w .about .left .buttonDownload:hover {
+    .megaflix-download-button:hover {
       background-color: rgba(127, 90, 240, 1);
     }
 
-    .container .max-w .about .right {
-      width: 60%;
-    }
-
-    .container .max-w .about .right img {
-      width: 100%;
-    }
-
-    .container .max-w .download {
-      width: 100%;
+    .download-options {
       display: none;
-      color: #fff;
+      width: 100%;
+      text-align: center;
+      margin-top: 40px;
     }
 
-    .container .max-w .download .title {
+    .download-options .title {
       font-size: 2rem;
       font-weight: 200;
-      text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
-    .container .max-w .download .items {
-      margin-top: 40px;
+    .download-items {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: 30px;
     }
 
-    .container .max-w .download .items .item {
+    .download-item {
       display: flex;
       flex-direction: column;
-      font-size: 22px;
-      font-weight: 300;
       align-items: center;
       color: #fff;
       max-width: 180px;
+      text-align: center;
     }
 
-    .container .max-w .download .items .item img {
+    .download-item img {
       width: 100%;
+      height: auto;
       margin: 20px 0;
-      border-radius: 8px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
     }
 
-    .container .max-w .download .items .item .button {
-      font-size: 17px;
+    .download-item span {
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 15px;
+    }
+
+    .download-item .button {
+      font-size: 1.05rem;
       background-color: rgba(0,0,0,0.7);
-      height: 35px;
-      width: 130px;
+      height: 40px;
+      width: 140px;
       border-radius: 31px;
       color: #fff;
-      font-weight: 400;
+      font-weight: 500;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      text-decoration: none;
     }
 
-    .container .max-w .download .items .item .button:hover {
+    .download-item .button:hover {
       background-color: rgba(127, 90, 240, 1);
     }
 
-    @media screen and (max-width: 768px) {
-      .container .max-w .about .left {
-        width: 100%;
+    @media (max-width: 768px) {
+      .card-texto, .card-img {
+        max-width: 100%;
       }
 
-      .container .max-w .about .right {
-        display: none;
-      }
-
-      .container .max-w .about .left .buttonDownload {
-        margin-left: calc(50% - 85px);
-      }
-
-      .container .max-w .download .items {
+      .card-secundario {
         flex-direction: column;
-        align-items: center;
       }
     }
   </style>
 </head>
 <body>
+  <section class="inicio">
+    <header>
+      <h2><a href="https://mrluke1337.github.io/GameScopeBR2025/index.html" class="ativo">GAMESCOPE</a></h2>
+      <nav>
+        <ul id="menu" class="menu-header">
+          <li><a href="../jogos.html">GAMES</a></li>
+          <li><a href="../apps.html">APPS</a></li>
+          <li><a href="../streaming.html" class="ativo">STREAMING</a></li>
+          <li><a href="../online.html">ONLINE</a></li>
+        </ul>
+      </nav>
+      <div class="hamburguer" id="hamburguer">
+        <div class="barra"></div>
+        <div class="barra"></div>
+        <div class="barra"></div>
+      </div>
+    </header>
 
-  <header>
-    <h1><a href="../../../index.html" class="ativo">GAMESCOPE</a></h1>
-    <div class="hamburguer" id="hamburguer">
-      <div class="barra"></div>
-      <div class="barra"></div>
-      <div class="barra"></div>
+    <div class="megaflix-logo-container">
+      <img src="Captura_de_tela_2025-07-14_150920-removebg-preview.png" alt="MegaFlix Logo" />
     </div>
-    <nav>
-      <ul id="menu" class="menu-header">
-        <li><a href="../jogos.html">GAMES</a></li>
-        <li><a href="../apps.html">APPS</a></li>
-        <li><a href="../streaming.html" class="ativo">STREAMING</a></li>
-        <li><a href="../online.html">ONLINE</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <div class="container">
-    <div class="max-w">
-      <div class="logo">
-        <img src="Captura_de_tela_2025-07-14_150920-removebg-preview.png" alt="MegaFlix Logo" />
+    <div class="card" id="aboutSection">
+      <div class="card-texto">
+        <h2>Compatível com vários dispositivos</h2>
+        <p>
+          O MegaFlix oferece entretenimento de alta qualidade em uma ampla gama de dispositivos, incluindo celulares, TV Box, Smart TV e Computadores.
+        </p>
+        <div class="megaflix-download-button" id="downloadButton">Baixar</div>
       </div>
-      <div class="about">
-        <div class="left">
-          <div class="title">Compatível com vários dispositivos</div>
-          <div class="desc">
-            O MegaFlix oferece entretenimento de alta qualidade em uma ampla gama de dispositivos, incluindo celulares, TV Box, Smart TV e Computadores.
-          </div>
-          <div class="buttonDownload">Baixar</div>
-        </div>
-        <div class="right">
-          <img src="https://i.imgur.com/GYrRPpM.png" alt="MegaFlix Dispositivo" />
-        </div>
+      <div class="card-img">
+        <img src="https://i.imgur.com/GYrRPpM.png" alt="MegaFlix Dispositivo" />
       </div>
-      <div class="download">
+    </div>
+
+    <div class="card download-options" id="downloadSection">
+      <div class="download-options-inner" style="width:100%; text-align:center;">
         <div class="title">Escolha o dispositivo para baixar</div>
-        <div class="items">
-          <div class="item">
+        <div class="download-items">
+          <div class="download-item">
             <img src="https://i.imgur.com/olEmJbR.png" alt="Celular" />
             <span>Celular</span>
-            <a href="https://www.mediafire.com/file/82dcf0354u2n44e/MegaFlix.4.5.2.apk/file"><div class="button">BAIXAR</div></a>
+            <a href="https://www.mediafire.com/file/82dcf0354u2n44e/MegaFlix.4.5.2.apk/file" target="_blank"><div class="button">BAIXAR</div></a>
           </div>
-          <div class="item">
+          <div class="download-item">
             <img src="https://i.imgur.com/l01GwbY.png" alt="SmartTV" />
             <span>SmartTV</span>
-            <a href="https://www.mediafire.com/file/mujble1rcoghefa/1.0.3.3.apk/file"><div class="button">BAIXAR</div></a>
+            <a href="https://www.mediafire.com/file/mujble1rcoghefa/1.0.3.3.apk/file" target="_blank"><div class="button">BAIXAR</div></a>
           </div>
-          <div class="item">
+          <div class="download-item">
             <img src="https://i.imgur.com/NGC0LNa.png" alt="Computador" />
             <span>Computador</span>
-            <a href="https://www.mediafire.com/file/ieaxfo9fowbc97b/MegaFlix_Setup_1.0.3.exe/file"><div class="button">BAIXAR</div></a>
+            <a href="https://www.mediafire.com/file/ieaxfo9fowbc97b/MegaFlix_Setup_1.0.3.exe/file" target="_blank"><div class="button">BAIXAR</div></a>
           </div>
-          <div class="item">
+          <div class="download-item">
             <img src="https://i.imgur.com/oEDXBOo.png" alt="TV Box" />
             <span>TV Box</span>
-            <a href="https://www.mediafire.com/file/j70a8z9vaky2zwl/1.0.3.3%25282%2529.apk/file"><div class="button">BAIXAR</div></a>
+            <a href="https://www.mediafire.com/file/j70a8z9vaky2zwl/1.0.3.3%25282%2529.apk/file" target="_blank"><div class="button">BAIXAR</div></a>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <script>
-  const hamburguer = document.getElementById("hamburguer");
-  const menu = document.getElementById("menu");
-  hamburguer.addEventListener("click", () => {
-    menu.classList.toggle("active");
-    hamburguer.classList.toggle("active");
-  });
-</script>
+    const hamburguer = document.getElementById("hamburguer");
+    const menu = document.getElementById("menu");
+    const downloadButton = document.getElementById("downloadButton");
+    const aboutSection = document.getElementById("aboutSection");
+    const downloadSection = document.getElementById("downloadSection");
 
+    hamburguer.addEventListener("click", () => {
+      menu.classList.toggle("active");
+      hamburguer.classList.toggle("active");
+    });
+
+    downloadButton.addEventListener("click", () => {
+      aboutSection.style.display = "none";
+      downloadSection.style.display = "flex";
+    });
+  </script>
 </body>
 </html>
