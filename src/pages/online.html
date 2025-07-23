@@ -5,6 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GameScope | Online</title>
   <link rel="stylesheet" href="../css/estilos.css" />
+  <style>
+    /* Ajuste das cores para COMUNIDADE e GAMESCOPE */
+    h2 span.comunidade {
+      color: white;
+    }
+    h2 span.gamescope {
+      color: rgba(127, 90, 240, 1);
+    }
+
+    /* Estilo do botão */
+    .botao-download {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: rgba(127, 90, 240, 1);
+      color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .botao-download:hover {
+      background-color: rgba(100, 70, 200, 1);
+    }
+
+    /* Centraliza imagem + botão */
+    .card-img {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
 </head>
 <body>
   <section class="inicio">
@@ -27,20 +63,25 @@
 
     <div class="card">
       <div class="card-texto">
-        <h2>JOGUE ONLINE COM A <span>COMUNIDADE</span> GAMESCOPE!</h2>
+        <h2>
+          JOGUE ONLINE COM A 
+          <span class="comunidade">COMUNIDADE</span> 
+          <span class="gamescope">GAMESCOPE</span>!
+        </h2>
         <p>
-          Quer jogar online com outros jogadores? Clique na imagem ao lado para acessar o site <strong>online-fix.me</strong>,
+          Quer jogar online com outros jogadores? Clique em "ACESSAR SITE" ou na imagem ao lado para acessar o site <strong>online-fix.me</strong>,
           crie sua conta e procure o jogo desejado.
         </p>
         <p>
           Se o jogo não aparecer, infelizmente não há suporte online. Caso apareça, clique em <strong>“Baixar correção do servidor”</strong> e siga as instruções.
         </p>
-		<li>O site a seguir apresenta anuncios, recomendamos o uso de bloqueadores de anuncio como Ghostery.</li>
+        <li>O site a seguir apresenta anuncios, recomendamos o uso de bloqueadores de anuncio como Ghostery.</li>
       </div>
       <div class="card-img">
         <a href="https://online-fix.me/" target="_blank">
           <img src="images-removebg-preview.png" alt="Acessar online-fix.me" />
         </a>
+        <a href="https://online-fix.me/" target="_blank" class="botao-download">ACESSAR SITE</a>
       </div>
     </div>
   </section>
